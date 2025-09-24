@@ -1,0 +1,23 @@
+/* src/theme/variables.css */
+
+/* Forçar o tema claro e definir cores de fundo */
+body {
+  --ion-background-color: #f9fafb; /* Cinza muito claro, igual ao bg-gray-50 */
+  --ion-background-color-rgb: 249, 250, 251;
+
+  --ion-text-color: #1f2937; /* Cinza escuro para o texto */
+  --ion-text-color-rgb: 31, 41, 55;
+}
+
+/* Forçar o tema claro mesmo que o sistema operacional prefira o escuro */
+@media (prefers-color-scheme: dark) {
+  body {
+    --ion-background-color: #f9fafb;
+    --ion-background-color-rgb: 249, 250, 251;
+
+    --ion-text-color: #1f2937;
+    --ion-text-color-rgb: 31, 41, 55;
+
+    /* Outras variáveis de cor para componentes Ionic em modo escuro podem ser redefinidas aqui se necessário */
+  }
+}

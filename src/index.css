@@ -1,0 +1,319 @@
+/* src/index.css */
+
+/* --- ESTILOS GLOBAIS --- */
+body {
+  background-color: #f3f4f6; /* Fundo cinza claro para as páginas internas */
+  color: #44403c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+}
+a { text-decoration: none; }
+h1, h2, h3 { font-weight: bold; }
+
+/* --- COMPONENTES --- */
+
+/* Barra de Navegação (Navbar.tsx) */
+.navbar {
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #374151;
+}
+.navbar-links {
+  display: none; /* Escondido em mobile */
+}
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+    gap: 3rem;
+  }
+}
+.navbar-links .nav-link {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #6b7280;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+.navbar-links .nav-link:hover {
+  color: #f59e0b;
+}
+.navbar-links .nav-link-active {
+  color: #f59e0b;
+  border-bottom-color: #f59e0b;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.navbar-user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+}
+.navbar-logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar-logout-button:hover {
+  color: #ef4444;
+}
+
+/* --- LAYOUT PRINCIPAL (Layout.tsx) --- */
+.main-content-wrapper {
+  padding: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- PÁGINAS DE AUTENTICAÇÃO --- */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fffbeb;
+}
+
+/* --- PÁGINA DE BOAS-VINDAS (Welcome.tsx) --- */
+#welcome-bear {
+  width: 100%;
+  height: auto;
+  max-width: 22rem;
+}
+@media (min-width: 768px) {
+  #welcome-bear {
+    max-width: 26rem;
+  }
+}
+.welcome-button {
+  display: inline-block;
+  background-color: #f59e0b;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: background-color 0.2s;
+}
+.welcome-button:hover {
+  background-color: #d97706;
+}
+.welcome-login-link {
+  font-weight: bold;
+  color: #d97706;
+  text-decoration: none;
+}
+.welcome-login-link:hover {
+  text-decoration: underline;
+}
+
+/* --- PÁGINA DE LOGIN (Login.tsx) --- */
+#login-bear {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+}
+
+/* --- PÁGINA DE REGISTO (SignUp.tsx) --- */
+#signup-bear {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* --- FORMULÁRIOS --- */
+.form-card {
+  background-color: white;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.form-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+}
+.form-card label {
+  font-weight: 500;
+  color: #374151;
+}
+.form-card .form-group {
+  margin-bottom: 1.25rem;
+}
+.form-card .submit-button {
+  width: 100%;
+  background-color: #fbbf24;
+  color: #44403c;
+  font-weight: bold;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.form-card .submit-button:hover {
+  background-color: #f59e0b;
+}
+.form-card .form-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #6b7280;
+}
+.form-card .form-link a {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* --- BOTÃO DE LOGIN COM GOOGLE --- */
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  background-color: white;
+  color: #374151;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.google-login-button:hover {
+  background-color: #f9fafb;
+}
+.google-login-button svg {
+  width: 24px;
+  height: 24px;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  margin: 1.5rem 0;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+.divider:not(:empty)::before {
+  margin-right: .25em;
+}
+.divider:not(:empty)::after {
+  margin-left: .25em;
+}
+
+/* --- PÁGINA INICIAL (Home.tsx) --- */
+.home-title { font-size: 2.5rem; margin-bottom: 2.5rem; }
+.stats-container {
+  background-color: #f59e0b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: white;
+}
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.stat-icon { width: 3rem; height: 3rem; object-fit: contain; }
+.stat-item p { margin: 0; }
+.stat-item .stat-label { font-weight: bold; font-size: 1.125rem; }
+.stat-item .stat-value { font-size: 1.875rem; font-weight: 300; }
+.info-banner {
+  background-color: white; padding: 1.5rem; border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-bottom: 2.5rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1rem;
+}
+@media (min-width: 640px) { .info-banner { flex-direction: row; } }
+.info-banner-text { font-weight: bold; font-size: 1.25rem; color: #374151; }
+.info-buttons { display: flex; gap: 1rem; }
+.info-button {
+  background-color: #f59e0b; color: white; font-weight: bold;
+  padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; transition: opacity 0.2s;
+}
+.info-button:hover { opacity: 0.9; }
+.nav-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 768px) { .nav-grid { grid-template-columns: repeat(3, 1fr); } }
+.nav-card {
+  background-color: #f59e0b; padding: 2rem; border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); text-align: center; color: white;
+  text-decoration: none; transition: transform 0.3s ease-in-out;
+}
+.nav-card:hover { transform: scale(1.05); }
+.nav-card-image { height: 11rem; margin: 0 auto 1.25rem auto; object-fit: contain; }
+.nav-card-title { font-weight: bold; font-size: 1.5rem; }
+
+/* --- PÁGINA DE SINAIS (Sinais.tsx) --- */
+.page-title { font-size: 3rem; text-align: center; margin-bottom: 3rem; color: #374151; }
+.category-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+@media (min-width: 1024px) { .category-grid { grid-template-columns: 1fr 1fr; } }
+.category-card {
+  background-color: #fbbf24; border-radius: 1rem; padding: 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s;
+}
+.category-card:hover { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+.category-card-image {
+  width: 7rem; height: 7rem; padding: 0.5rem;
+  object-fit: contain; background-color: white; border-radius: 0.75rem;
+}
+.category-card-content { flex: 1; }
+.category-card-title { font-weight: bold; font-size: 1.5rem; color: white; }
+.category-card-subtitle { font-size: 1rem; color: white; margin-bottom: 1rem; }
+.category-card-footer { display: flex; align-items: center; justify-content: space-between; }
+.category-card-button {
+  background-color: #374151; color: white; font-size: 1rem; font-weight: 600;
+  padding: 0.6rem 1.5rem; border-radius: 0.5rem; text-decoration: none; transition: background-color 0.2s;
+}
+.category-card-button:hover { background-color: #4b5563; }
+.category-card-progress { color: white; font-size: 0.875rem; font-weight: 600; }
+
+/* --- PÁGINA DE PERFIL (Profile.tsx) --- */
+.profile-container { max-width: 42rem; margin: 0 auto; }
+.profile-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem; }
+.profile-avatar { width: 8rem; height: 8rem; border-radius: 9999px; background-color: #d1d5db; margin-bottom: 1rem; }
+.profile-name { font-size: 1.5rem; font-weight: bold; color: #1f2937; }
+.profile-info-card { background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+.profile-info-email { font-size: 1.125rem; color: #374151; margin-bottom: 1rem; }
+.profile-info-email span { font-weight: bold; }
+.profile-delete-button { color: #dc2626; font-weight: 600; text-decoration: underline; background: none; border: none; cursor: pointer; }
