@@ -10,6 +10,21 @@ body {
 a { text-decoration: none; }
 h1, h2, h3 { font-weight: bold; }
 
+/* Forçar tamanho de app mobile */
+ion-app, ion-content, body {
+  max-width: 420px; /* largura típica de celular */
+  margin: 0 auto;   /* centraliza no desktop */
+  height: 100vh;
+  background-color: #fef8e7; /* sua cor de fundo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Evita expandir demais em telas grandes */
+html {
+  background-color: #f3f3f3;
+}
+
+
 /* --- COMPONENTES --- */
 
 /* Barra de Navegação (Navbar.tsx) */
@@ -165,6 +180,7 @@ h1, h2, h3 { font-weight: bold; }
   font-size: 1rem;
   box-sizing: border-box;
   margin-top: 0.5rem;
+  color: #FFFFFF;
 }
 .form-card label {
   font-weight: 500;

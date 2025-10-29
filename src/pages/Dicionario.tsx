@@ -81,7 +81,7 @@ const DicionarioSinais: React.FC = () => {
               onKeyPress={(e) => e.key === 'Enter' && !loading && handleSearch()}
               placeholder="Digite uma tag (ex: cachorro, praia...)"
               disabled={loading}
-              className="flex-grow w-full px-4 py-3 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-200 disabled:opacity-60"
+              className="flex-grow w-full px-4 py-3 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-200 disabled:opacity-60"
             />
             <button
               onClick={handleSearch}
